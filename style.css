@@ -1,0 +1,24 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+#years {
+    width: 18%;
+}
+
+#months {
+    width: 5%;
+}
+
+.year,.month {
+    width: 15px;
+    height: 15px;
+    background-color: rgb(114, 112, 112);
+    margin: 5px;
+    float: left;
+}
+
+.active {
+    background-color: rgb(219, 88, 0);
+}
