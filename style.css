@@ -3,6 +3,10 @@ body {
     color: white;
 }
 
+.wrapper {
+    display: flex;
+}
+
 #years {
     width: 18%;
 }
@@ -11,7 +15,11 @@ body {
     width: 5%;
 }
 
-.year,.month {
+#days {
+    width: 15%;
+}
+
+.year,.month, .day {
     width: 15px;
     height: 15px;
     background-color: rgb(114, 112, 112);
