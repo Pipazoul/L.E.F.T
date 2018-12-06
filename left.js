@@ -5,7 +5,7 @@ $(document).ready(function () {
     console.log(date);
 
     // Define dates
-    var age = 23;
+    //var age = 0;
     var months = 12;
 
     // DIVS
@@ -35,9 +35,15 @@ $(document).ready(function () {
     $("#submit").click(function () {
         console.log("submit");
         var gender = $("#gender").val();
-        console.log(gender);
-        constructTimeline();
-    })
+        var birthdate = new Date($('#birthdate').val());
+        var age = date.getFullYear() - birthdate.getFullYear();
+        birthdate = birthdate.getFullYear() + "-" + birthdate.getMonth() + "-" + birthdate.getDate();
+        //var birthdate = $("#birthdate").val();
+        var country = $("#country").val();
+        country = country.charAt(0).toUpperCase()+ country.slice(1);
+        console.log(gender + " " + birthdate + " " + country );
+        constructTimeline(gender, country, birthdate, age);
+    });
 
 
     constructTimeline();
@@ -46,14 +52,16 @@ $(document).ready(function () {
 
 
     // Displays all the resting days
-    function constructTimeline(gender= "male", country= "France", dateOfBirth="1990-02-15") {
+    function constructTimeline(gender= "male", country= "France", dateOfBirth="1990-02-15", age = 0) {
+
+        console.log(age);
 
         //API Call
         var url = "http://api.population.io:80/1.0/life-expectancy/total/" + gender + "/" + country + "/" + dateOfBirth + "/";
 
-        divDays.empty();
-        divYears.empty();
-        divMonth.empty();
+        divDays.find('.day').not('p').remove();
+        divYears.find('.year').not('p').remove();
+        divMonth.find('.month').not('p').remove();
 
         $.getJSON(url, function (data) {
             var items = [];

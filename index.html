@@ -9,29 +9,28 @@
 <body>
     <div id="open-settings"><i class="fas fa-cog"></i></div>
     <div class="wrapper">
-        Lasting Years
-        <div id="years"></div>
+        <div id="years"><p>Lasting Years</p></div>
 
-        Lasting months in year
-        <div id="months"></div>
+        <div id="months"><p>Lasting months in year</p></div>
 
-        Lasting Days in Month
-        <div id="days"></div>
+        <div id="days"> <p>Lasting Days in Month</p></div>
 
     </div>
+    <!--Setting Section-->
     <div class="overlay hide"></div>
     <div id="settings" class="hide">
         <div class="icon close"><i class="fas fa-times-circle"></i></div>
         <p>Biological Gender :</p>
-        <select id="gender" name="gender">
-            <option>Male</option>
-            <option>Female</option>
+        <select id="gender" name="gender" selected="male">
+            <option>male</option>
+            <option>female</option>
         </select>
-        <p>Birthdate : YYYY-MM-DD </p>
-        <input id="birthdate" type="date">
+        <p>Birthdate : MM-DD-YYYY </p>
+        <input id="birthdate" type="date" value="1995-06-23">
         <p>Country :</p>
-        <input id="country" type="text" >
-        <input id="submit">
+        <input id="country" type="text" value="france">
+        <br>
+        <input type="submit" id="submit">
 
 
 
