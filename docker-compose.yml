@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+  left:
+    build: .
+    image: yassinsiouda/left
+    volumes:
+      - ./:/usr/local/apache2/htdocs/
+    ports:
+      - "8080:80"
