@@ -4,6 +4,8 @@ services:
     build: .
     image: yassinsiouda/left
     volumes:
-      - ./:/usr/local/apache2/htdocs/
+      - ./index.html:/usr/local/apache2/htdocs/index.html
+      - ./style.css:/usr/local/apache2/htdocs/style.css
+      - ./left.js:/usr/local/apache2/htdocs/left.js
     ports:
       - "8080:80"
